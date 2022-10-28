@@ -1,0 +1,91 @@
+.infoBalence{
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap-reverse ;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.up{
+    width: 340px;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.up img{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px 1px blue;
+    
+}
+
+.up p{
+    font-size: 20px;
+    margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(17, 82, 221);
+}
+main img{
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+}
+.balence{
+    padding-left: 10px;
+    border-left: 2px solid rgb(22, 22, 207);
+    position: relative;
+    display: flex;
+    font-size: 35px;
+    color: rgb(13, 132, 196);
+    height: 40px;
+    width: 350px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+.earning{
+    padding-left: 10px;
+    margin-left: 15px;
+    border-left: 2px solid rgb(12, 188, 94);
+    position: relative;
+    display: flex;
+    font-size: 37px;
+    color: rgb(9, 213, 128);
+    height: 40px;
+    width: 310px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+.loses{
+    padding-left: 10px;
+    margin-left: 30px;
+    border-left: 2px solid rgb(183, 11, 11);
+    position: relative;
+    display: flex;
+    font-size: 38px;
+    color: rgb(216, 57, 17);
+    height: 40px;
+    width: 350px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+.hidden{
+    display: none;
+}
+.balence .input{
+    border: none;
+    position: absolute;
+    height: 38px;
+    width: 160px;
+    right: 0;
+    z-index: 3;
+}
+input:focus-visible{
+    border: none;
+}

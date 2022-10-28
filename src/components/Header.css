@@ -1,0 +1,33 @@
+nav{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.up{
+    width: 340px;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.up img{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px 1px blue;
+    
+}
+
+.up p{
+    font-size: 20px;
+    margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(17, 82, 221);
+}
+nav h1{
+    color: rgba(183, 14, 225, 0.601);
+    align-self: center;
+    
+}
