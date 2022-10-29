@@ -4,11 +4,11 @@ export default function FilterBar (props){
     if(props.cats.length>0){
         list=[...list,...props.cats]
     }
-    else list=["there is no Cathegories !!!"]
+    else list=["there is no Categories !!!"]
     return(
         <div className="filter-bar">
             <select name="catFilter" id="" onChange={props.filterByCat}>
-                <option value="">Filter by Cathegory</option>
+                <option value="">Filter by Category</option>
                 {
                     list.length>1?
                     list.map(item=><option key={item} value={item}>{item}</option>):

@@ -73,8 +73,17 @@ export default function Charts(props){
       };
       return(
         <div className="charts">
-            <ReactApexChart options={data.options} series={data.series} type="polarArea" height={350} width={350} />
+          {data.series.length>0?
+            <div>
+              <center><h2>Categories</h2></center>
+              <ReactApexChart options={data.options} series={data.series} type="polarArea" height={350} width={350} />
+            </div>:
+            null
+          }
+          <div>
+            <center><h2>Balence History</h2></center>
             <ReactApexChart options={options} series={series} type="area" height={350} width={350} />
+          </div>
         </div>
       )
 }

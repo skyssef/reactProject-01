@@ -92,7 +92,7 @@ export default class Graphe extends Component{
             
             return variable
         }
-        if(this.state.barInfo.desc.trim()==="" || formtest()===false) test=false;
+        if(this.state.barInfo.desc.trim()===""|| this.state.barInfo.amount.trim()===""|| this.state.barInfo.choice.trim()===""|| formtest()===false) test=false;
         
         else test =true;
         if(test){
@@ -129,7 +129,7 @@ export default class Graphe extends Component{
             this.updateHistory(this.state.info.balence-this.state.barInfo.amount,this.state.info.lose+this.state.barInfo.amount,this.state.info.earning,date_time.getTime())
             
         }
-        else swal("description is alredy exists !","worning","error");
+        else swal("insertion error, plaise check the inputs fields !","worning","error");
         
     }
     NewItem=()=>{

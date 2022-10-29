@@ -13,10 +13,10 @@ const AddBar=(props)=>{
             <input className='inputs' onChange={props.formInfo} name='desc' type="text" placeholder='Enter the description...' /><br />
             <input className='inputs' onChange={props.formInfo} name='amount' type="text" placeholder='Enter the amount...'/><br />
             <select name="choice" id="choice" onChange={props.formInfo}>
-                <option value="">Cathegory</option>
+                <option value="">Category</option>
                 {
                     props.catList.map((item)=><option key={item} value={item}>{item}</option>)
-                }
+                }   
             </select>
             <button type='button' className='btnAdd' onClick={props.AddBar}>Add</button>
         </form>
@@ -25,7 +25,7 @@ const AddBar=(props)=>{
 const AddCat=(props)=>{
     return( 
         <form action="#">
-            <h1>Add New Cathegory</h1>
+            <h1>Add New Category</h1>
             <input className='inputs' name='cat' onChange={props.inputCat}  type="text" placeholder='Enter the Cathegory...' /><br />
             <button type='button' className='btnAdd' onClick={props.AddCat}>Add</button>
         </form>
