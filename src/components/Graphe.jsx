@@ -10,15 +10,15 @@ import swal from 'sweetalert';
 
 export default class Graphe extends Component{
 
-    state= localStorage.length>0? JSON.parse(localStorage.getItem("data")):this.props.data
+    state= localStorage.length>0? JSON.parse(localStorage.getItem("uniqueKeyData")):this.props.data
     setData=()=>{
         var data={...this.state};
         localStorage.clear();
-        localStorage.setItem("data",JSON.stringify(data))
+        localStorage.setItem("uniqueKeyData",JSON.stringify(data))
     }
     componentDidUpdate(prevProps,prevState) {
         
-        if (JSON.parse(localStorage.getItem("data"))!== this.state) {
+        if (JSON.parse(localStorage.getItem("uniqueKeyData"))!== this.state) {
           this.setData()
         }
       }
@@ -36,7 +36,14 @@ export default class Graphe extends Component{
         });
         
     }
-    
+    delBarInfo=()=>{
+        this.setState({ barInfo:{
+                            desc:"",
+                            amount:0,
+                            choice:""
+                        }
+                    });
+    }
     AddCat=()=>{
         var cat=this.state.cathegory;
         var list=this.state.catList.filter(item=>item===cat);
@@ -92,7 +99,7 @@ export default class Graphe extends Component{
             
             return variable
         }
-        if(this.state.barInfo.desc.trim()===""|| this.state.barInfo.amount.trim()===""|| this.state.barInfo.choice.trim()===""|| formtest()===false) test=false;
+        if(this.state.barInfo.desc===""|| this.state.barInfo.amount===""|| this.state.barInfo.choice===""|| formtest()===false) test=false;
         
         else test =true;
         if(test){
@@ -124,9 +131,12 @@ export default class Graphe extends Component{
                     lose:this.state.info.lose+this.state.barInfo.amount
                 },
                 valueList:valList
+               
             });
 
-            this.updateHistory(this.state.info.balence-this.state.barInfo.amount,this.state.info.lose+this.state.barInfo.amount,this.state.info.earning,date_time.getTime())
+            this.updateHistory(this.state.info.balence-this.state.barInfo.amount,this.state.info.lose+this.state.barInfo.amount,this.state.info.earning,date_time.getTime());
+
+            this.delBarInfo();  
             
         }
         else swal("insertion error, plaise check the inputs fields !","worning","error");
